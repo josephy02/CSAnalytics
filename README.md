@@ -1,2 +1,2 @@
 # CSAnalytics
-Building a customer support analytics
+Building a customer support analytics tool
