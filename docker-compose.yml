@@ -1,0 +1,12 @@
+services:
+  jupyter:
+    image: jupyter/minimal-notebook:latest
+    container_name: jupyter-minimal
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/notebooks
+      - ./data:/home/jovyan/data
+      - ./scripts:/home/jovyan/scripts
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
