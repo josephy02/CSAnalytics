@@ -8,10 +8,12 @@ import os
 @st.cache_data
 def load_data():
     """Load processed data from parquet files using pandas"""
-    import pandas as pd
     try:
-        # Adjust the path as needed
-        return pd.read_parquet("../data/processed/processed_tickets")
+        # Get the absolute path of the current script
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        # Go up one level to the project root and then to data directory
+        data_path = os.path.join(script_dir, "..", "data", "processed", "processed_tickets")
+        return pd.read_parquet(data_path)
     except Exception as e:
         st.error(f"Error loading data: {e}")
         return None
